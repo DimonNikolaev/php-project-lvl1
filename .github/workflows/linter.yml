@@ -4,6 +4,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: make lint
       - name: check linter
         uses: actions/checkout@v2
-      - run: make lint
