@@ -20,7 +20,7 @@
         "squizlabs/php_codesniffer": "3.*"
     },
     "scripts": {
-        "phpcs": "vendor/bin/phpcs --standard=PSR12 bin --colors"
+        "phpcs": "phpcs --standard=PSR12 bin --colors"
     }
 }
  
