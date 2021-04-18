@@ -1,0 +1,8 @@
+name: linter
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint
+      - run: make lint
