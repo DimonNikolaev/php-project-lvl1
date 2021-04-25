@@ -16,8 +16,3 @@ validate:
 
 lint:
 		composer run-script phpcs
-
-
-start-game:
-		php ./bin/brain-games
-		php ./bin/brain-even

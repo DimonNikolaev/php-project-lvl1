@@ -4,7 +4,14 @@ namespace Brain\Games\answerEvenCli;
 
 use function cli\line;
 use function cli\prompt;
-use function Brain\Games\Cli\printHelloPromptUser;
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
 
 function isRightAnswer(string $answer, string $rightAnswer): bool
 {
@@ -16,8 +23,7 @@ function printQuestionAnswerIsEvenUser()
 {
     $count = 0;
     line("Answer 'yes' if the number is even, otherwise answer 'no' ");
-
-    printHelloPromptUser();
+    $name = \Brain\Games\Cli\getName();
 
     do {
         $randomNumber = rand(0, 100);
@@ -28,20 +34,20 @@ function printQuestionAnswerIsEvenUser()
             printAnswerCorrent();
             $count++;
         } elseif (!isRightAnswer($answer, $randomNumberEven)) {
-            printWrongAnswer();
+            printWrongAnswer($name);
 
             return;
         }
     } while ($count < 3);
 
-    printIfAllAnswersAreCorrect();
+    printIfAllAnswersAreCorrect($name);
 }
 
-function printWrongAnswer()
+function printWrongAnswer($name)
 {
     line('\'yes\' is wrong answer ;(. Correct answer was \'no\'');
 
-    line('Let\'s try again, Bill!');
+    line("Let's try again, %s!", $name);
 }
 
 function printAnswerCorrent()
@@ -49,7 +55,7 @@ function printAnswerCorrent()
     line('Correct!');
 }
 
-function printIfAllAnswersAreCorrect()
+function printIfAllAnswersAreCorrect($name)
 {
-    line('Congratulations, Bill!');
+    line("Congratulations, %s", $name);
 }
