@@ -21,9 +21,9 @@ function isRightAnswer(string $answer, string $rightAnswer): bool
 
 function printQuestionAnswerIsEvenUser()
 {
+    $name = \Brain\Games\Cli\printHelloPromptUser();
     $count = 0;
     line("Answer 'yes' if the number is even, otherwise answer 'no' ");
-    $name = \Brain\Games\Cli\getName();
 
     do {
         $randomNumber = rand(0, 100);

@@ -10,5 +10,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-\Brain\Games\Cli\printHelloPromptUser();
 \Brain\Games\answerEvenCli\printQuestionAnswerIsEvenUser();
