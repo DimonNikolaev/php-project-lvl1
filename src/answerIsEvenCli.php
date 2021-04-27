@@ -21,7 +21,7 @@ function isRightAnswer(string $answer, string $rightAnswer): bool
 
 function printQuestionAnswerIsEvenUser()
 {
-    $name = \Brain\Games\Cli\printHelloPromptUser();
+    $name = readline_info()['line_buffer'];
     $count = 0;
     line("Answer 'yes' if the number is even, otherwise answer 'no' ");
 

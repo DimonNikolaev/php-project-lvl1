@@ -1,6 +1,6 @@
-#!/usr/bin/env php
-
 <?php
+
+namespace Brain\Games\Engine;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -10,5 +10,11 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-\Brain\Games\Cli\printHelloPromptUser();
-\Brain\Games\answerEvenCli\printQuestionAnswerIsEvenUser();
+use function cli\prompt;
+
+function setUsername(string $name = '')
+{
+    $name = readline('May I have your name?');
+
+    readline_add_history($name);
+}
