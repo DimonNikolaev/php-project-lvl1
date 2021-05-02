@@ -12,6 +12,6 @@ if (file_exists($autoloadPath1)) {
 
 \Brain\Games\Cli\printHelloPromptUser();
 \Brain\Games\Engine\newGame(
-    '\Brain\Games\answerEvenCli\gameAnswerIsEven',
-    \Brain\Games\answerEvenCli\getQuestion()
+    '\Brain\Games\answerIsCorrectExpressionResult\gameCalc',
+    \Brain\Games\answerIsCorrectExpressionResult\getQuestion()
 );

@@ -15,7 +15,7 @@ use function cli\line;
 function printHelloPromptUser()
 {
     line('Welcome to the Brain Game!');
-    $name = readline('May I have your name?');
+    $name = readline('May I have your name? ');
     readline_add_history($name);
 
     line("Hello, %s!", $name);

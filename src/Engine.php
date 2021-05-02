@@ -10,11 +10,59 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function cli\prompt;
+use function cli\line;
 
-function setUsername(string $name = '')
+function getName(): string
 {
-    $name = readline('May I have your name?');
+    return readline_info()['line_buffer'];
+}
 
-    readline_add_history($name);
+function printIfAllAnswersAreCorrect($name)
+{
+    line("Congratulations, %s", $name);
+}
+
+function newGame($gameResult, string $question)
+{
+    $numberOfCorrectAnswers = 0;
+
+    line($question);
+
+    do {
+        $gameRef = $gameResult();
+
+        $answer = $gameRef[0];
+        $correctAnswer = $gameRef[1];
+
+        if (isRightAnswer($answer, $correctAnswer)) {
+            line(getAnswerCorrect());
+            $numberOfCorrectAnswers++;
+        } else {
+            gameFalse(getName(), $answer, $correctAnswer);
+            return;
+        }
+    } while ($numberOfCorrectAnswers < 3);
+
+    printIfAllAnswersAreCorrect(getName());
+}
+
+function getAnswerCorrect(): string
+{
+    return "Correct";
+}
+
+function gameFalse(string $name, $wrongAnswer, $correctAnswer)
+{
+    line("{$wrongAnswer} is wrong answer ;(. Correct answer was {$correctAnswer}");
+
+    line("Let's try again, %s!", $name);
+}
+
+
+function isRightAnswer(string $answer, string $rightAnswer): bool
+{
+    print_r($answer, PHP_EOL);
+    print_r($rightAnswer, PHP_EOL);
+
+    return $answer === $rightAnswer;
 }
