@@ -35,15 +35,22 @@ function newGame($gameResult, string $question)
         $correctAnswer = $gameRef[1];
 
         if (isRightAnswer($answer, $correctAnswer)) {
+            printAnswerUser($answer);
             line(getAnswerCorrect());
             $numberOfCorrectAnswers++;
         } else {
+            printAnswerUser($answer);
             gameFalse(getName(), $answer, $correctAnswer);
             return;
         }
     } while ($numberOfCorrectAnswers < 3);
 
     printIfAllAnswersAreCorrect(getName());
+}
+
+function printAnswerUser($answer)
+{
+    line("Your answer: {$answer}");
 }
 
 function getAnswerCorrect(): string

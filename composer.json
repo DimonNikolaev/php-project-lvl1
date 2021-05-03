@@ -13,10 +13,11 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "autoload": {
-        "files": ["src/Cli.php", "src/answerIsEvenCli.php", "src/Engine.php", "src/answerIsCorrectExpressionResult.php"]
+        "files": ["src/Cli.php", "src/answerIsEvenCli.php", "src/Engine.php", "src/answerIsCorrectExpressionResult.php", "src/gcdCli.php"]
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*"

@@ -40,12 +40,6 @@ function gameAnswerIsEven()
     $answer = prompt("Question: " . $randomNumber);
     $correctAnswer = isTheRandomValueEven($randomNumber);
 
-    // if (isRightAnswer($answer, $correctAnswer)) {
-    //     return true;
-    // } elseif (!isRightAnswer($answer, $correctAnswer)) {
-    //     return false;
-    // }
-
     return [$answer, $correctAnswer];
 }
 
