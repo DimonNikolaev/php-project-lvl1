@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Engine;
+namespace Brain\Engine;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -11,6 +11,7 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function cli\line;
+use function cli\prompt;
 
 function getName(): string
 {
@@ -19,12 +20,17 @@ function getName(): string
 
 function printIfAllAnswersAreCorrect($name)
 {
-    line("Congratulations, %s", $name);
+    line("Congratulations, %s!", $name);
 }
 
 function newGame($gameResult, string $question)
 {
     $numberOfCorrectAnswers = 0;
+
+    line('Welcome to the Brain Game!');
+
+    $name = prompt('May I have your name? ');
+    line("Hello, %s!", $name);
 
     line($question);
 
@@ -40,12 +46,12 @@ function newGame($gameResult, string $question)
             $numberOfCorrectAnswers++;
         } else {
             printAnswerUser($answer);
-            gameFalse(getName(), $answer, $correctAnswer);
+            gameFalse($name, $answer, $correctAnswer);
             return;
         }
     } while ($numberOfCorrectAnswers < 3);
 
-    printIfAllAnswersAreCorrect(getName());
+    printIfAllAnswersAreCorrect($name);
 }
 
 function printAnswerUser($answer)
@@ -55,7 +61,7 @@ function printAnswerUser($answer)
 
 function getAnswerCorrect(): string
 {
-    return "Correct";
+    return "Correct!";
 }
 
 function gameFalse(string $name, $wrongAnswer, $correctAnswer)

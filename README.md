@@ -7,4 +7,4 @@
 
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/linter/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
 
-https://asciinema.org/a/Ho8PXTRmSEyUyYKb8q4LgFbGg
+https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp

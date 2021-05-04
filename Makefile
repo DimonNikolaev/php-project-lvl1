@@ -24,3 +24,7 @@ validate:
 
 lint:
 		composer run-script phpcs
+
+
+autoload:
+		composer dump-autoload
