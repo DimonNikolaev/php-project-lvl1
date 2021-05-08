@@ -9,3 +9,8 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+
+\Brain\Engine\newGame(
+    '\Brain\Games\Progression\gameProgression',
+    \Brain\Games\Progression\getQuestion()
+);

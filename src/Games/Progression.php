@@ -4,20 +4,42 @@ namespace Brain\Games\Progression;
 
 use function cli\prompt;
 
-function gameGCD()
+function getTheAmountOfTheLengthOfTheSequence(): int
 {
-    $randomNumber1 = rand(0, 100);
-    $randomNumber2 = rand(0, 100);
-    $question = "{$randomNumber1} {$randomNumber2}";
+    return rand(5, 10);
+}
 
-    $answer = prompt("Question: " . $question);
+function gameProgression()
+{
+    $result = [];
+    $lengthSequence = getTheAmountOfTheLengthOfTheSequence();
+    $stepBetweenNumbers = rand(0, 5);
+    $firstNumberInTheSequence = rand(0, 100);
+    $randomPositionInSequence = rand(0, $lengthSequence - 1);
+    $hiddenElement = 0;
+    $result[] = $firstNumberInTheSequence;
 
-    $greatestCommonDivisor = gmp_strval(gmp_gcd($randomNumber1, $randomNumber2));
+    for ($index = 0; $index < $lengthSequence; $index++) {
+        $lastElement = (int) $result[count($result) - 1];
+        $nextNumber = $lastElement + $stepBetweenNumbers;
 
-    return  [$answer, $greatestCommonDivisor];
+        if ($index === $randomPositionInSequence) {
+            $result[] = '..';
+            $hiddenElement = $nextNumber;
+            $result[] = $nextNumber + $stepBetweenNumbers;
+
+            continue;
+        }
+
+        $result[] = $nextNumber;
+    }
+
+    $answer = prompt("Question: " . implode(" ", $result));
+
+    return [$answer, $hiddenElement];
 }
 
 function getQuestion(): string
 {
-    return 'Find the greatest common divisor of given numbers.';
+    return 'What number is missing in the progression?';
 }
