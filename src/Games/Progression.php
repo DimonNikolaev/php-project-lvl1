@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\gcdGame;
+namespace Brain\Games\Progression;
 
 use function cli\prompt;
 
