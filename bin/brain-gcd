@@ -11,8 +11,7 @@ if (file_exists($autoloadPath1)) {
 }
 
 
-\Brain\Games\Cli\printHelloPromptUser();
-\Brain\Games\Engine\newGame(
-    '\Brain\Games\gcdCli\gameGCD',
-    \Brain\Games\gcdCli\getQuestion()
+\Brain\Engine\newGame(
+    '\Brain\Games\gcdGame\gameGCD',
+    \Brain\Games\gcdGame\getQuestion()
 );

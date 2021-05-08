@@ -1,33 +1,8 @@
 <?php
 
-namespace Brain\Games\answerIsCorrectExpressionResult;
+namespace Brain\Games\Calc;
 
-use function cli\line;
 use function cli\prompt;
-
-$autoloadPath1 = __DIR__ . '/../../../autoload.php';
-$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
-if (file_exists($autoloadPath1)) {
-    require_once $autoloadPath1;
-} else {
-    require_once $autoloadPath2;
-}
-
-function getQuestion(): string
-{
-    return 'What is the result of the expression?';
-}
-
-
-function wrongAnswer(string $wrongAnswer, string $correctAnswer): string
-{
-    return "{$wrongAnswer} is wrong answer ;(. Correct answer was {$correctAnswer}.";
-}
-
-// function getWrongAswer(): string
-// {
-
-// }
 
 function gameCalc()
 {
@@ -64,4 +39,10 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
     }
 
     return $expressionResult;
+}
+
+
+function getTextQuestion(): string
+{
+    return 'What is the result of the expression?';
 }

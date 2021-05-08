@@ -10,8 +10,7 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-\Brain\Games\Cli\printHelloPromptUser();
-\Brain\Games\Engine\newGame(
-    '\Brain\Games\answerIsCorrectExpressionResult\gameCalc',
-    \Brain\Games\answerIsCorrectExpressionResult\getQuestion()
+\Brain\Engine\newGame(
+    '\Brain\Games\Calc\gameCalc',
+    \Brain\Games\Calc\getTextQuestion()
 );
