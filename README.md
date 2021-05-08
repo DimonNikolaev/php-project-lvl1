@@ -7,4 +7,8 @@
 
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/linter/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
 
-https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp
+https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp - Brain-even
+
+https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF - Brain-calc
+
+https://asciinema.org/a/Rc3LUDcD68YWF9jUdsZnL36Xc - Brain-gcd
