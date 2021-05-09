@@ -3,6 +3,7 @@
 namespace Brain\Games\Even;
 
 use function cli\prompt;
+use function Brain\Engine\newGame;
 
 function isTheRandomValueEven(int $randomNumber): string
 {
@@ -21,4 +22,10 @@ function gameAnswerIsEven()
     $correctAnswer = isTheRandomValueEven($randomNumber);
 
     return [$answer, $correctAnswer];
+}
+
+
+function game()
+{
+    newGame('gameAnswerIsEven', getTextQuestion());
 }

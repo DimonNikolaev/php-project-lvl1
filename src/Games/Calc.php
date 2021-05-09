@@ -3,6 +3,7 @@
 namespace Brain\Games\Calc;
 
 use function cli\prompt;
+use function Brain\Engine\newGame;
 
 function gameCalc()
 {
@@ -45,4 +46,10 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 function getTextQuestion(): string
 {
     return 'What is the result of the expression?';
+}
+
+
+function game()
+{
+    newGame('Brain\Games\Calc\gameCalc', getTextQuestion());
 }

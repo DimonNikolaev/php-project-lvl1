@@ -3,6 +3,7 @@
 namespace Brain\Games\gcdGame;
 
 use function cli\prompt;
+use function Brain\Engine\newGame;
 
 function gameGCD()
 {
@@ -17,7 +18,13 @@ function gameGCD()
     return  [$answer, $greatestCommonDivisor];
 }
 
-function getQuestion(): string
+function getTextQuestion(): string
 {
     return 'Find the greatest common divisor of given numbers.';
+}
+
+
+function game()
+{
+    newGame('Brain\Games\gcdGame\gameGCD', getTextQuestion());
 }

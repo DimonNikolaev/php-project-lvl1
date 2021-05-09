@@ -11,7 +11,4 @@ if (file_exists($autoloadPath1)) {
 }
 
 
-\Brain\Engine\newGame(
-    '\Brain\Games\gcdGame\gameGCD',
-    \Brain\Games\gcdGame\getQuestion()
-);
+\Brain\Games\gcdGame\game();

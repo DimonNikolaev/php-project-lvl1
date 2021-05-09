@@ -10,7 +10,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-\Brain\Engine\newGame(
-    '\Brain\Games\Calc\gameCalc',
-    \Brain\Games\Calc\getTextQuestion()
-);
+\Brain\Games\Calc\game();

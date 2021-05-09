@@ -1,4 +1,5 @@
-### Hexlet tests and linter status:
+# Hexlet tests and linter status
+
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
@@ -7,10 +8,10 @@
 
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/linter/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
 
-https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp - Brain-even
+[Brain-even](https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp)
 
-https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF - Brain-calc
+[Brain-calc](https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF)
 
-https://asciinema.org/a/Rc3LUDcD68YWF9jUdsZnL36Xc - Brain-gcd
+[Brain-gcd](https://asciinema.org/a/Rc3LUDcD68YWF9jUdsZnL36Xc)
 
-https://asciinema.org/a/ksLzkPZoniJxoxX9W2JyjwJtp - Brain-progression
+[Brain-progression](https://asciinema.org/a/ksLzkPZoniJxoxX9W2JyjwJtp)
