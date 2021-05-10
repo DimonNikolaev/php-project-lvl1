@@ -20,7 +20,7 @@ function printIfAllAnswersAreCorrect(string $name): void
     line("Congratulations, %s!", $name);
 }
 
-function newGame(string $gameResult, string $question): void
+function newGame(callable $gameResult, string $question): void
 {
     $numberOfCorrectAnswers = 0;
 
