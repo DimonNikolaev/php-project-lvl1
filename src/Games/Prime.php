@@ -11,7 +11,7 @@ function gamePrimeNumber()
     $randomNumber = rand(0, 100);
     $answer = prompt("Question: " . $randomNumber);
 
-    if (gmp_prob_prime($randomNumber) === 2) {
+    if (isPrime($randomNumber)) {
         $rightAnswer = 'yes';
         return [$answer, $rightAnswer];
     } else {
@@ -23,6 +23,17 @@ function gamePrimeNumber()
 function getTextQuestion(): string
 {
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
+}
+
+function isPrime($num)
+{
+    for ($i = 2; $i < $num; $i++) {
+        if ($num % $i == 0) {
+            return false;
+            break;
+        }
+    }
+    return true;
 }
 
 function game()
