@@ -15,7 +15,8 @@
         "bin/brain-calc",
         "bin/brain-gcd",
         "bin/brain-progression",
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-prime"
     ],
     "autoload": {
         "files": [
