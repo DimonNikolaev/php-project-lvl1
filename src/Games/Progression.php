@@ -10,7 +10,7 @@ function getTheAmountOfTheLengthOfTheSequence(): int
     return rand(5, 10);
 }
 
-function gameProgression()
+function gameProgression(): array
 {
     $result = [];
     $lengthSequence = getTheAmountOfTheLengthOfTheSequence();
@@ -21,7 +21,7 @@ function gameProgression()
     $result[] = $firstNumberInTheSequence;
 
     for ($index = 0; $index < $lengthSequence; $index++) {
-        $lastElement = (int) $result[count($result) - 1];
+        $lastElement = intval($result[count($result) - 1]);
         $nextNumber = $lastElement + $stepBetweenNumbers;
 
         if ($index === $randomPositionInSequence) {
@@ -46,7 +46,7 @@ function getTextQuestion(): string
 }
 
 
-function game()
+function game(): void
 {
     newGame('Brain\Games\Progression\gameProgression', getTextQuestion());
 }

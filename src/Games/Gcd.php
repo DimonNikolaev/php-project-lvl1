@@ -5,7 +5,7 @@ namespace Brain\Games\gcdGame;
 use function cli\prompt;
 use function Brain\Engine\newGame;
 
-function gameGCD()
+function gameGCD(): array
 {
     $randomNumber1 = rand(0, 100);
     $randomNumber2 = rand(0, 100);
@@ -23,7 +23,7 @@ function getTextQuestion(): string
     return 'Find the greatest common divisor of given numbers.';
 }
 
-function gcd($firstNumber, $secondNumber)
+function gcd(int $firstNumber, int $secondNumber): int
 {
     while (true) {
         if ($firstNumber == $secondNumber) {
@@ -37,7 +37,7 @@ function gcd($firstNumber, $secondNumber)
     }
 }
 
-function game()
+function game(): void
 {
     newGame('Brain\Games\gcdGame\gameGCD', getTextQuestion());
 }

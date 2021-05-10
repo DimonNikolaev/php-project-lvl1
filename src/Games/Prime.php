@@ -5,7 +5,7 @@ namespace Brain\Games\prime;
 use function cli\prompt;
 use function Brain\Engine\newGame;
 
-function gamePrimeNumber()
+function gamePrimeNumber(): array
 {
     $rightAnswer = '';
     $randomNumber = rand(0, 100);
@@ -25,18 +25,17 @@ function getTextQuestion(): string
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function isPrime($num)
+function isPrime(int $num): bool
 {
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i == 0) {
             return false;
-            break;
         }
     }
     return true;
 }
 
-function game()
+function game(): void
 {
     newGame('Brain\Games\prime\gamePrimeNumber', getTextQuestion());
 }

@@ -15,17 +15,12 @@ if (file_exists($autoloadPath1)) {
 use function cli\line;
 use function cli\prompt;
 
-function getName(): string
-{
-    return readline_info()['line_buffer'];
-}
-
-function printIfAllAnswersAreCorrect($name)
+function printIfAllAnswersAreCorrect(string $name): void
 {
     line("Congratulations, %s!", $name);
 }
 
-function newGame($gameResult, string $question)
+function newGame(string $gameResult, string $question): void
 {
     $numberOfCorrectAnswers = 0;
 
@@ -56,7 +51,7 @@ function newGame($gameResult, string $question)
     printIfAllAnswersAreCorrect($name);
 }
 
-function printAnswerUser($answer)
+function printAnswerUser(string $answer): void
 {
     line("Your answer: {$answer}");
 }
@@ -66,7 +61,7 @@ function getAnswerCorrect(): string
     return "Correct!";
 }
 
-function gameFalse(string $name, $wrongAnswer, $correctAnswer)
+function gameFalse(string $name, string $wrongAnswer, string $correctAnswer): void
 {
     line("{$wrongAnswer} is wrong answer ;(. Correct answer was {$correctAnswer}");
 
@@ -76,8 +71,5 @@ function gameFalse(string $name, $wrongAnswer, $correctAnswer)
 
 function isRightAnswer(string $answer, string $rightAnswer): bool
 {
-    print_r($answer, PHP_EOL);
-    print_r($rightAnswer, PHP_EOL);
-
     return $answer === $rightAnswer;
 }

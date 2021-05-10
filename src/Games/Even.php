@@ -15,7 +15,7 @@ function getTextQuestion(): string
     return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 
-function gameAnswerIsEven()
+function gameAnswerIsEven(): array
 {
     $randomNumber = rand(0, 100);
     $answer = prompt("Question: " . $randomNumber);
@@ -25,7 +25,7 @@ function gameAnswerIsEven()
 }
 
 
-function game()
+function game(): void
 {
     newGame('Brain\Games\Even\gameAnswerIsEven', getTextQuestion());
 }

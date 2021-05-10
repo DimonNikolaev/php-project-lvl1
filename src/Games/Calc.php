@@ -5,7 +5,7 @@ namespace Brain\Games\Calc;
 use function cli\prompt;
 use function Brain\Engine\newGame;
 
-function gameCalc()
+function gameCalc(): array
 {
     $randomNumber1 = rand(0, 100);
     $randomNumber2 = rand(0, 100);
@@ -49,7 +49,7 @@ function getTextQuestion(): string
 }
 
 
-function game()
+function game(): void
 {
     newGame('Brain\Games\Calc\gameCalc', getTextQuestion());
 }
