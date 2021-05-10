@@ -27,5 +27,5 @@ function gameAnswerIsEven()
 
 function game()
 {
-    newGame('gameAnswerIsEven', getTextQuestion());
+    newGame('Brain\Games\Even\gameAnswerIsEven', getTextQuestion());
 }
