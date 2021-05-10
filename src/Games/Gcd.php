@@ -13,7 +13,7 @@ function gameGCD()
 
     $answer = prompt("Question: " . $question);
 
-    $greatestCommonDivisor = gmp_strval(gmp_gcd($randomNumber1, $randomNumber2));
+    $greatestCommonDivisor = gcd($randomNumber1, $randomNumber2);
 
     return  [$answer, $greatestCommonDivisor];
 }
@@ -23,6 +23,19 @@ function getTextQuestion(): string
     return 'Find the greatest common divisor of given numbers.';
 }
 
+function gcd($firstNumber, $secondNumber)
+{
+    while (true) {
+        if ($firstNumber == $secondNumber) {
+            return $secondNumber;
+        }
+        if ($firstNumber > $secondNumber) {
+            $firstNumber -= $secondNumber;
+        } else {
+            $secondNumber -= $firstNumber;
+        }
+    }
+}
 
 function game()
 {
