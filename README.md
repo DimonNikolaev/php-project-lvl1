@@ -1,4 +1,4 @@
-# Hexlet tests and linter status
+## A console program with a set of games.
 
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
 
@@ -7,6 +7,16 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/linter/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
+
+
+### Setup: 
+```bash
+git clone https://github.com/DimonNikolaev/php-project-lvl1.git
+
+make install
+```
+
+---
 
 [Brain-even](https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp)
 
