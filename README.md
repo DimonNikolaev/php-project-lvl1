@@ -8,12 +8,17 @@
 
 [![Actions Status](https://github.com/DimonNikolaev/php-project-lvl1/workflows/linter/badge.svg)](https://github.com/DimonNikolaev/php-project-lvl1/actions)
 
+Brain-even
 [![asciicast](https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp.svg)](https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp)
 
-[Brain-calc](https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF)
+Brain-calc
+[![asciicast](https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF.svg)](https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF)
 
-[Brain-gcd](https://asciinema.org/a/Rc3LUDcD68YWF9jUdsZnL36Xc)
+Brain-gcd
+[![asciicast](https://asciinema.org/a/Rc3LUDcD68YWF9jUdsZnL36Xc.svg)](https://asciinema.org/a/Rc3LUDcD68YWF9jUdsZnL36Xc)
 
-[Brain-progression](https://asciinema.org/a/ksLzkPZoniJxoxX9W2JyjwJtp)
+Brain-progression
+[![asciicast](https://asciinema.org/a/ksLzkPZoniJxoxX9W2JyjwJtp.svg)](https://asciinema.org/a/ksLzkPZoniJxoxX9W2JyjwJtp)
 
-[Brain-prime](https://asciinema.org/a/jWTH6gXraBK3TkrV0ZIMPt3If)
+Brain-prime
+[![asciicast](https://asciinema.org/a/jWTH6gXraBK3TkrV0ZIMPt3If.svg)](https://asciinema.org/a/jWTH6gXraBK3TkrV0ZIMPt3If)
