@@ -16,7 +16,7 @@ function newGame(callable $gameResult, string $question): void
 
     $numberOfCorrectAnswers = 0;
     $numberOfRepetitionsOfTheGame = 3;
-    $passedGameMessage = "Congratulations, " . $name;
+    $passedGameMessage = "Congratulations, {$name}!";
 
     do {
         $gameRef = $gameResult();
@@ -35,7 +35,7 @@ function newGame(callable $gameResult, string $question): void
 
             line("{$answer} is wrong answer ;(. Correct answer was {$correctAnswer}");
 
-            line("Let's try again, %s!" . $name);
+            line("Let's try again, ${$name}!");
 
             return;
         }
