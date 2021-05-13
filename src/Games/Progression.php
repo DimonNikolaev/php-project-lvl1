@@ -4,6 +4,7 @@ namespace Brain\Games\Progression;
 
 use function cli\prompt;
 use function Brain\Engine\newGame;
+use function cli\line;
 
 function getTheAmountOfTheLengthOfTheSequence(): int
 {
@@ -40,13 +41,9 @@ function gameProgression(): array
     return [$answer, $hiddenElement];
 }
 
-function getTextQuestion(): string
-{
-    return 'What number is missing in the progression?';
-}
-
-
 function game(): void
 {
-    newGame('Brain\Games\Progression\gameProgression', getTextQuestion());
+    $descriptionGame = 'What number is missing in the progression?';
+
+    newGame('Brain\Games\Progression\gameProgression', $descriptionGame);
 }

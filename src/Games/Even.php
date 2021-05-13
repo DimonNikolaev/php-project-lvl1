@@ -10,11 +10,6 @@ function isTheRandomValueEven(int $randomNumber): string
     return $randomNumber % 2 === 0 ? 'yes' : 'no';
 }
 
-function getTextQuestion(): string
-{
-    return 'Answer "yes" if the number is even, otherwise answer "no".';
-}
-
 function gameAnswerIsEven(): array
 {
     $randomNumber = rand(0, 100);
@@ -27,5 +22,7 @@ function gameAnswerIsEven(): array
 
 function game(): void
 {
-    newGame('Brain\Games\Even\gameAnswerIsEven', getTextQuestion());
+    $descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+    newGame('Brain\Games\Even\gameAnswerIsEven', $descriptionGame);
 }

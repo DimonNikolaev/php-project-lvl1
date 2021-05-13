@@ -43,13 +43,9 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 }
 
 
-function getTextQuestion(): string
-{
-    return 'What is the result of the expression?';
-}
-
-
 function game(): void
 {
-    newGame('Brain\Games\Calc\gameCalc', getTextQuestion());
+    $descriptionGame = 'What is the result of the expression?';
+
+    newGame('Brain\Games\Calc\gameCalc', $descriptionGame);
 }

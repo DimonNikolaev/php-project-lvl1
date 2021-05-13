@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\prime;
+namespace Brain\Games\Prime;
 
 use function cli\prompt;
 use function Brain\Engine\newGame;
@@ -20,11 +20,6 @@ function gamePrimeNumber(): array
     }
 }
 
-function getTextQuestion(): string
-{
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
-}
-
 function isPrime(int $num): bool
 {
     for ($i = 2; $i < $num; $i++) {
@@ -37,5 +32,7 @@ function isPrime(int $num): bool
 
 function game(): void
 {
-    newGame('Brain\Games\prime\gamePrimeNumber', getTextQuestion());
+    $descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+    newGame('Brain\Games\prime\gamePrimeNumber', $descriptionGame);
 }

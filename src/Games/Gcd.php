@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\gcdGame;
+namespace Brain\Games\GcdGame;
 
 use function cli\prompt;
 use function Brain\Engine\newGame;
@@ -16,11 +16,6 @@ function gameGCD(): array
     $greatestCommonDivisor = gcd($randomNumber1, $randomNumber2);
 
     return  [$answer, $greatestCommonDivisor];
-}
-
-function getTextQuestion(): string
-{
-    return 'Find the greatest common divisor of given numbers.';
 }
 
 function gcd(int $firstNumber, int $secondNumber): int
@@ -39,5 +34,7 @@ function gcd(int $firstNumber, int $secondNumber): int
 
 function game(): void
 {
-    newGame('Brain\Games\gcdGame\gameGCD', getTextQuestion());
+    $descriptionGame = 'Find the greatest common divisor of given numbers.';
+
+    newGame('Brain\Games\gcdGame\gameGCD', $descriptionGame);
 }
