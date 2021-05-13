@@ -16,8 +16,7 @@ function newGame(callable $gameResult, string $question): void
 
     $numberOfCorrectAnswers = 0;
     $numberOfRepetitionsOfTheGame = 3;
-    $passedGameMessage = "Congratulations, %s!" . $name;
-
+    $passedGameMessage = "Congratulations, " . $name;
 
     do {
         $gameRef = $gameResult();
