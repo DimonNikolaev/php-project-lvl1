@@ -7,8 +7,8 @@ use function Brain\Engine\newGame;
 
 function gameGCD(): array
 {
-    $randomNumber1 = rand(0, 100);
-    $randomNumber2 = rand(0, 100);
+    $randomNumber1 = rand(1, 100);
+    $randomNumber2 = rand(1, 100);
     $question = "{$randomNumber1} {$randomNumber2}";
 
     $answer = prompt("Question: " . $question);
