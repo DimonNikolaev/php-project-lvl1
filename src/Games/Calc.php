@@ -2,25 +2,7 @@
 
 namespace Brain\Games\Calc;
 
-use function cli\prompt;
 use function Brain\Engine\newGame;
-
-function gameCalc(): array
-{
-    $randomNumber1 = rand(0, 100);
-    $randomNumber2 = rand(0, 100);
-
-    $mathOperators = ['+', '*', '-'];
-    $randomMathOperatorKey = array_rand($mathOperators);
-    $randomMathOperator = $mathOperators[$randomMathOperatorKey][0];
-
-    $correctExpressionAnswer = getMathExpressionResult($randomNumber1, $randomNumber2, $randomMathOperator);
-    $mathExpression = getMathExpression($randomNumber1, $randomNumber2, $randomMathOperator);
-
-    $answer = prompt("Question: " . $mathExpression);
-
-    return [$answer, $correctExpressionAnswer];
-}
 
 function getMathExpression(int $firstOperand, int $secondOperand, string $mathOperator): string
 {
@@ -46,6 +28,23 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 function game(): void
 {
     $descriptionGame = 'What is the result of the expression?';
+    $countGames = 3;
+    $resultOfThreeGames = [];
 
-    newGame('Brain\Games\Calc\gameCalc', $descriptionGame);
+    for ($game = 0; $game < $countGames; $game++) {
+        $randomNumbers = [rand(1, 100), rand(1, 100)];
+
+        $mathOperators = ['+', '*', '-'];
+
+        $randomMathOperatorKey = array_rand($mathOperators);
+
+        $randomMathOperator = $mathOperators[$randomMathOperatorKey][0];
+
+        $correctExpressionAnswer = getMathExpressionResult($randomNumbers[0], $randomNumbers[1], $randomMathOperator);
+        $mathExpression = getMathExpression($randomNumbers[0], $randomNumbers[1], $randomMathOperator);
+
+        $resultOfThreeGames[$mathExpression] = $correctExpressionAnswer;
+    }
+
+    newGame($resultOfThreeGames, $descriptionGame);
 }

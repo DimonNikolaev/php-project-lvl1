@@ -2,21 +2,7 @@
 
 namespace Brain\Games\GcdGame;
 
-use function cli\prompt;
 use function Brain\Engine\newGame;
-
-function gameGCD(): array
-{
-    $randomNumber1 = rand(1, 100);
-    $randomNumber2 = rand(1, 100);
-    $question = "{$randomNumber1} {$randomNumber2}";
-
-    $answer = prompt("Question: " . $question);
-
-    $greatestCommonDivisor = gcd($randomNumber1, $randomNumber2);
-
-    return  [$answer, $greatestCommonDivisor];
-}
 
 function gcd(int $firstNumber, int $secondNumber): int
 {
@@ -36,5 +22,18 @@ function game(): void
 {
     $descriptionGame = 'Find the greatest common divisor of given numbers.';
 
-    newGame('Brain\Games\gcdGame\gameGCD', $descriptionGame);
+    $countGames = 3;
+    $resultOfThreeGames = [];
+
+    for ($game = 0; $game < $countGames; $game++) {
+        $randomNumbers = [rand(1, 100), rand(1, 100)];
+
+        $gcd = "{$randomNumbers[0]} {$randomNumbers[1]}";
+
+        $greatestCommonDivisor = gcd($randomNumbers[0], $randomNumbers[1]);
+
+        $resultOfThreeGames[$gcd] = $greatestCommonDivisor;
+    }
+
+    newGame($resultOfThreeGames, $descriptionGame);
 }

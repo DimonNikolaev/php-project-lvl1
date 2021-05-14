@@ -4,46 +4,48 @@ namespace Brain\Games\Progression;
 
 use function cli\prompt;
 use function Brain\Engine\newGame;
-use function cli\line;
 
 function getTheAmountOfTheLengthOfTheSequence(): int
 {
     return rand(5, 10);
 }
 
-function gameProgression(): array
-{
-    $result = [];
-    $lengthSequence = getTheAmountOfTheLengthOfTheSequence();
-    $stepBetweenNumbers = rand(0, 5);
-    $firstNumberInTheSequence = rand(0, 100);
-    $randomPositionInSequence = rand(0, $lengthSequence - 1);
-    $hiddenElement = 0;
-    $result[] = $firstNumberInTheSequence;
-
-    for ($index = 0; $index < $lengthSequence; $index++) {
-        $lastElement = intval($result[count($result) - 1]);
-        $nextNumber = $lastElement + $stepBetweenNumbers;
-
-        if ($index === $randomPositionInSequence) {
-            $result[] = '..';
-            $hiddenElement = $nextNumber;
-            $result[] = $nextNumber + $stepBetweenNumbers;
-
-            continue;
-        }
-
-        $result[] = $nextNumber;
-    }
-
-    $answer = prompt("Question: " . implode(" ", $result));
-
-    return [$answer, $hiddenElement];
-}
-
 function game(): void
 {
     $descriptionGame = 'What number is missing in the progression?';
 
-    newGame('Brain\Games\Progression\gameProgression', $descriptionGame);
+    $countGames = 3;
+    $resultOfThreeGames = [];
+
+    for ($game = 0; $game < $countGames; $game++) {
+        $result = [];
+        $lengthSequence = getTheAmountOfTheLengthOfTheSequence();
+        $stepBetweenNumbers = rand(0, 5);
+        $firstNumberInTheSequence = rand(0, 100);
+        $randomPositionInSequence = rand(0, $lengthSequence - 1);
+        $hiddenElement = 0;
+        $result[] = $firstNumberInTheSequence;
+        $sequence = '';
+
+        for ($index = 0; $index < $lengthSequence; $index++) {
+            $lastElement = intval($result[count($result) - 1]);
+            $nextNumber = $lastElement + $stepBetweenNumbers;
+
+            if ($index === $randomPositionInSequence) {
+                $result[] = '..';
+                $hiddenElement = $nextNumber;
+                $result[] = $nextNumber + $stepBetweenNumbers;
+
+                continue;
+            }
+
+            $result[] = $nextNumber;
+        }
+
+        $sequence = implode(" ", $result);
+
+        $resultOfThreeGames[$sequence] = $hiddenElement;
+    }
+
+    newGame($resultOfThreeGames, $descriptionGame);
 }
