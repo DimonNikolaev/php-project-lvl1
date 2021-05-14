@@ -21,7 +21,7 @@ function game(): void
     $resultOfThreeGames = [];
 
     for ($game = 0; $game < $countGames; $game++) {
-        $randomNumber = rand(0, 100);
+        $randomNumber = rand(2, 100);
         $expectedAnswer = isPrime($randomNumber) ? 'yes' : 'no';
 
         $resultOfThreeGames[$randomNumber] = $expectedAnswer;
