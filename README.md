@@ -18,7 +18,8 @@ make install
 
 ---
 
-[Brain-even](https://asciinema.org/a/l0KhnaZ6iyiQemhvwRq0INjqp)
+[Brain-even]
+[![asciicast](https://asciinema.org/a/YruhcyMio0MUWu9AR0EWv3nFR.svg)](https://asciinema.org/a/YruhcyMio0MUWu9AR0EWv3nFR)
 
 Brain-calc
 [![asciicast](https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF.svg)](https://asciinema.org/a/KHDyVPOM4i91LiTNGjxNxQ6oF)

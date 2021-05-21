@@ -2,8 +2,10 @@
 
 namespace Brain\Games\Progression;
 
-use function cli\prompt;
 use function Brain\Engine\newGame;
+use const Brain\Engine\countGames;
+
+const descriptionGame = 'What number is missing in the progression?';
 
 function getTheAmountOfTheLengthOfTheSequence(): int
 {
@@ -12,12 +14,9 @@ function getTheAmountOfTheLengthOfTheSequence(): int
 
 function game(): void
 {
-    $descriptionGame = 'What number is missing in the progression?';
-
-    $countGames = 3;
     $resultOfThreeGames = [];
 
-    for ($game = 0; $game < $countGames; $game++) {
+    for ($game = 0; $game < countGames; $game++) {
         $result = [];
         $lengthSequence = getTheAmountOfTheLengthOfTheSequence();
         $stepBetweenNumbers = rand(0, 5);
@@ -47,5 +46,5 @@ function game(): void
         $resultOfThreeGames[$sequence] = $hiddenElement;
     }
 
-    newGame($resultOfThreeGames, $descriptionGame);
+    newGame($resultOfThreeGames, descriptionGame);
 }

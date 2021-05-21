@@ -5,6 +5,8 @@ namespace Brain\Engine;
 use function cli\line;
 use function cli\prompt;
 
+const countGames = 3;
+
 function newGame(array $gameResults, string $question): void
 {
     line('Welcome to the Brain Game!');
@@ -14,31 +16,23 @@ function newGame(array $gameResults, string $question): void
 
     line($question);
 
-    $passedGameMessage = "Congratulations, ${name}!";
-
     foreach ($gameResults as $answer => $correctAnswer) {
-        $answerUser = prompt("Question: " . $answer);
+        $answerForQuestion = prompt("Question: " . $answer);
+        $answerUser = "Your answer: {$answerForQuestion}";
 
-        $isRightAnswer = (string) $correctAnswer === $answerUser;
-
-        if ($isRightAnswer) {
-            line("Your answer: {$answerUser}");
+        if ((string) $correctAnswer === $answerForQuestion) {
+            line($answerUser);
             line("Correct!");
         } else {
-            line("Your answer: {$answerUser}");
+            line($answerUser);
 
-            line("{$answerUser} is wrong answer ;(. Correct answer was {$correctAnswer}");
+            line("{$answerForQuestion} is wrong answer ;(. Correct answer was {$correctAnswer}");
 
             line("Let's try again, ${name}!");
 
-            return;
+            exit();
         }
     }
 
-    line($passedGameMessage);
-}
-
-function getAnswerCorrect(): string
-{
-    return "Correct!";
+    line("Congratulations, ${name}!");
 }

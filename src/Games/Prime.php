@@ -1,8 +1,11 @@
 <?php
 
-namespace Brain\Games\prime;
+namespace Brain\Games\Prime;
 
 use function Brain\Engine\newGame;
+use const Brain\Engine\countGames;
+
+const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $num): bool
 {
@@ -16,16 +19,14 @@ function isPrime(int $num): bool
 
 function game(): void
 {
-    $gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    $countGames = 3;
     $resultOfThreeGames = [];
 
-    for ($game = 0; $game < $countGames; $game++) {
+    for ($game = 0; $game < countGames; $game++) {
         $randomNumber = rand(2, 100);
         $expectedAnswer = isPrime($randomNumber) ? 'yes' : 'no';
 
         $resultOfThreeGames[$randomNumber] = $expectedAnswer;
     }
 
-    newGame($resultOfThreeGames, $gameDescription);
+    newGame($resultOfThreeGames, descriptionGame);
 }

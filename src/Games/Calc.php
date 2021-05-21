@@ -3,6 +3,9 @@
 namespace Brain\Games\Calc;
 
 use function Brain\Engine\newGame;
+use const Brain\Engine\countGames;
+
+const descriptionGame = 'What is the result of the expression?';
 
 function getMathExpression(int $firstOperand, int $secondOperand, string $mathOperator): string
 {
@@ -27,11 +30,9 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 
 function game(): void
 {
-    $descriptionGame = 'What is the result of the expression?';
-    $countGames = 3;
     $resultOfThreeGames = [];
 
-    for ($game = 0; $game < $countGames; $game++) {
+    for ($game = 0; $game < countGames; $game++) {
         $randomNumbers = [rand(1, 100), rand(1, 100)];
 
         $mathOperators = ['+', '*', '-'];
@@ -46,5 +47,5 @@ function game(): void
         $resultOfThreeGames[$mathExpression] = $correctExpressionAnswer;
     }
 
-    newGame($resultOfThreeGames, $descriptionGame);
+    newGame($resultOfThreeGames, descriptionGame);
 }
