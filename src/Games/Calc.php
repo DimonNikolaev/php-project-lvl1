@@ -7,6 +7,7 @@ use const Brain\Engine\countGames;
 
 const descriptionGame = 'What is the result of the expression?';
 
+
 function getMathExpression(int $firstOperand, int $secondOperand, string $mathOperator): string
 {
     return "{$firstOperand} {$mathOperator} {$secondOperand}";
