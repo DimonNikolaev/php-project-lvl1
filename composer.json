@@ -23,7 +23,7 @@
             "src/Engine.php", 
             "src/Games/Even.php", 
             "src/Games/Calc.php", 
-            "src/Games/GCD.php", 
+            "src/Games/Gcd.php", 
             "src/Games/Progression.php", 
             "src/Games/Prime.php",
             "src/Cli.php"
