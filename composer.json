@@ -33,7 +33,9 @@
         "squizlabs/php_codesniffer": "3.*"
     },
     "scripts": {
-        "phpcs": ["phpcs --standard=PSR12 bin --colors", "phpcs --standard=PSR12 src --colors"]
+        "phpcs": [
+            "phpcs --standard=PSR12 bin --colors", "phpcs --standard=PSR12 src --colors"
+        ]
     }
 }
  
