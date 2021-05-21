@@ -3,9 +3,9 @@
 namespace Brain\Games\Even;
 
 use function Brain\Engine\newGame;
-use const Brain\Engine\countGames;
+use const Brain\Engine\COUNT_GAMES;
 
-const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const DESCRIPTION_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 
 function isTheRandomValueEven(int $randomNumber): string
@@ -17,11 +17,11 @@ function game(): void
 {
     $resultOfThreeGames = [];
 
-    for ($game = 0; $game < countGames; $game++) {
+    for ($game = 0; $game < COUNT_GAMES; $game++) {
         $randomNumber = rand(0, 100);
 
         $resultOfThreeGames[$randomNumber] = isTheRandomValueEven($randomNumber);
     }
 
-    newGame($resultOfThreeGames, descriptionGame);
+    newGame($resultOfThreeGames, DESCRIPTION_GAME);
 }
