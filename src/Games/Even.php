@@ -3,6 +3,7 @@
 namespace Brain\Games\Even;
 
 use function Brain\Engine\newGame;
+
 use const Brain\Engine\COUNT_GAMES;
 
 const DESCRIPTION_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
