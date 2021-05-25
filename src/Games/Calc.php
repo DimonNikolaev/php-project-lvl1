@@ -4,7 +4,7 @@ namespace Brain\Games\Calc;
 
 use function Brain\Engine\newGame;
 
-use const Brain\Engine\COUNT_GAMES;
+use const Brain\Engine\ROUND_COUNT;
 
 const DESCRIPTION_GAME = 'What is the result of the expression?';
 
@@ -18,12 +18,16 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 {
     $expressionResult = 0;
 
-    if ($mathOperator === '+') {
-        $expressionResult = $firstOperand + $secondOperand;
-    } elseif ($mathOperator === '-') {
-        $expressionResult = $firstOperand - $secondOperand;
-    } elseif ($mathOperator === '*') {
-        $expressionResult = $firstOperand * $secondOperand;
+    switch ($mathOperator) {
+        case '+':
+            $expressionResult = $firstOperand + $secondOperand;
+            break;
+        case '-':
+            $expressionResult = $firstOperand - $secondOperand;
+            break;
+        case '*':
+            $expressionResult = $firstOperand * $secondOperand;
+            break;
     }
 
     return $expressionResult;
@@ -32,9 +36,9 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 
 function game(): void
 {
-    $resultOfThreeGames = [];
+    $resultGame = [];
 
-    for ($game = 0; $game < COUNT_GAMES; $game++) {
+    for ($game = 0; $game < ROUND_COUNT; $game++) {
         $randomNumbers = [rand(1, 100), rand(1, 100)];
 
         $mathOperators = ['+', '*', '-'];
@@ -46,8 +50,8 @@ function game(): void
         $correctExpressionAnswer = getMathExpressionResult($randomNumbers[0], $randomNumbers[1], $randomMathOperator);
         $mathExpression = getMathExpression($randomNumbers[0], $randomNumbers[1], $randomMathOperator);
 
-        $resultOfThreeGames[$mathExpression] = $correctExpressionAnswer;
+        $resultGame[$mathExpression] = $correctExpressionAnswer;
     }
 
-    newGame($resultOfThreeGames, DESCRIPTION_GAME);
+    newGame($resultGame, DESCRIPTION_GAME);
 }

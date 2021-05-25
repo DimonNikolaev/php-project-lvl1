@@ -4,13 +4,13 @@ namespace Brain\Games\Prime;
 
 use function Brain\Engine\newGame;
 
-use const Brain\Engine\COUNT_GAMES;
+use const Brain\Engine\ROUND_COUNT;
 
 const DESCRIPTION_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $num): bool
 {
-    for ($i = 2; $i < $num; $i++) {
+    for ($i = 2; $i < $num / 2; $i++) {
         if ($num % $i == 0) {
             return false;
         }
@@ -20,14 +20,14 @@ function isPrime(int $num): bool
 
 function game(): void
 {
-    $resultOfThreeGames = [];
+    $resultGame = [];
 
-    for ($game = 0; $game < COUNT_GAMES; $game++) {
+    for ($game = 0; $game < ROUND_COUNT; $game++) {
         $randomNumber = rand(2, 100);
         $expectedAnswer = isPrime($randomNumber) ? 'yes' : 'no';
 
-        $resultOfThreeGames[$randomNumber] = $expectedAnswer;
+        $resultGame[$randomNumber] = $expectedAnswer;
     }
 
-    newGame($resultOfThreeGames, DESCRIPTION_GAME);
+    newGame($resultGame, DESCRIPTION_GAME);
 }
