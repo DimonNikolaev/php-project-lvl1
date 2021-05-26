@@ -4,7 +4,7 @@ namespace Brain\Games\Even;
 
 use function Brain\Engine\newGame;
 
-use const Brain\Engine\ROUND_COUNT;
+use const Brain\Engine\ROUNDS_COUNT;
 
 const DESCRIPTION_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -22,7 +22,7 @@ function game(): void
 {
     $resultGame = [];
 
-    for ($game = 0; $game < ROUND_COUNT; $game++) {
+    for ($game = 0; $game < ROUNDS_COUNT; $game++) {
         $randomNumber = rand(0, 100);
 
         $resultGame[$randomNumber] = check($randomNumber);

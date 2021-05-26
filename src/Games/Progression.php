@@ -4,7 +4,7 @@ namespace Brain\Games\Progression;
 
 use function Brain\Engine\newGame;
 
-use const Brain\Engine\ROUND_COUNT;
+use const Brain\Engine\ROUNDS_COUNT;
 
 const DESCRIPTION_GAME = 'What number is missing in the progression?';
 
@@ -12,7 +12,7 @@ function game(): void
 {
     $resultGame = [];
 
-    for ($game = 0; $game < ROUND_COUNT; $game++) {
+    for ($game = 0; $game < ROUNDS_COUNT; $game++) {
         $result = [];
         $lengthSequence = rand(5, 10);
         $stepBetweenNumbers = rand(0, 5);
