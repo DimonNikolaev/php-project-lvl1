@@ -28,6 +28,9 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
         case '*':
             $expressionResult = $firstOperand * $secondOperand;
             break;
+        default:
+            throw new Exception('Деление на ноль.');
+            break;
     }
 
     return $expressionResult;
