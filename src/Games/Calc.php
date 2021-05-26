@@ -29,8 +29,7 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
             $expressionResult = $firstOperand * $secondOperand;
             break;
         default:
-            throw new \Exception('Деление на ноль.');
-            break;
+            throw new \Exception('Неверный оператор');
     }
 
     return $expressionResult;
