@@ -17,15 +17,16 @@ function game(): void
         $lengthSequence = rand(5, 10);
         $stepBetweenNumbers = rand(0, 5);
         $firstNumberInTheSequence = rand(0, 100);
-        $hiddenElement = rand(0, $lengthSequence - 1);
+        $hiddenElementPosition = rand(0, $lengthSequence - 1);
         $result[] = $firstNumberInTheSequence;
         $sequence = '';
+        $hiddenElement = 0;
 
         for ($index = 0; $index < $lengthSequence; $index++) {
             $lastElement = intval($result[count($result) - 1]);
             $nextNumber = $lastElement + $stepBetweenNumbers;
 
-            if ($index === $hiddenElement) {
+            if ($index === $hiddenElementPosition) {
                 $result[] = '..';
                 $hiddenElement = $nextNumber;
                 $result[] = $nextNumber + $stepBetweenNumbers;
