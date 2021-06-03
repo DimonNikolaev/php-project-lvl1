@@ -11,7 +11,7 @@ const DESCRIPTION_GAME = 'Answer "yes" if given number is prime. Otherwise answe
 function isPrime(int $num): bool
 {
     for ($i = 2; $i < $num / 2; $i++) {
-        if ($num % $i === 0 && $num === 0 && $num === 1) {
+        if ($num % $i === 0 || $num === 0 || $num === 1) {
             return false;
         }
     }
