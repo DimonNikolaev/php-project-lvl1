@@ -38,7 +38,7 @@ function getMathExpressionResult(int $firstOperand, int $secondOperand, string $
 
 function game(): void
 {
-    $resultGame = [];
+    $gameData = [];
 
     for ($game = 0; $game < ROUNDS_COUNT; $game++) {
         $randomNumbers = [rand(1, 100), rand(1, 100)];
@@ -52,8 +52,8 @@ function game(): void
         $correctExpressionAnswer = getMathExpressionResult($randomNumbers[0], $randomNumbers[1], $randomMathOperator);
         $mathExpression = getMathExpression($randomNumbers[0], $randomNumbers[1], $randomMathOperator);
 
-        $resultGame[$mathExpression] = $correctExpressionAnswer;
+        $gameData[$mathExpression] = $correctExpressionAnswer;
     }
 
-    newGame($resultGame, DESCRIPTION_GAME);
+    newGame($gameData, DESCRIPTION_GAME);
 }

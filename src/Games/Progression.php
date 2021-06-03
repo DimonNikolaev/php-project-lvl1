@@ -10,15 +10,14 @@ const DESCRIPTION_GAME = 'What number is missing in the progression?';
 
 function game(): void
 {
-    $resultGame = [];
+    $gameData = [];
 
     for ($game = 0; $game < ROUNDS_COUNT; $game++) {
         $result = [];
         $lengthSequence = rand(5, 10);
         $stepBetweenNumbers = rand(0, 5);
         $firstNumberInTheSequence = rand(0, 100);
-        $randomPositionInSequence = rand(0, $lengthSequence - 1);
-        $hiddenElement = 0;
+        $hiddenElement = rand(0, $lengthSequence - 1);
         $result[] = $firstNumberInTheSequence;
         $sequence = '';
 
@@ -26,21 +25,19 @@ function game(): void
             $lastElement = intval($result[count($result) - 1]);
             $nextNumber = $lastElement + $stepBetweenNumbers;
 
-            if ($index === $randomPositionInSequence) {
+            if ($index === $hiddenElement) {
                 $result[] = '..';
                 $hiddenElement = $nextNumber;
                 $result[] = $nextNumber + $stepBetweenNumbers;
-
-                continue;
+            } else {
+                $result[] = $nextNumber;
             }
-
-            $result[] = $nextNumber;
         }
 
         $sequence = implode(" ", $result);
 
-        $resultGame[$sequence] = $hiddenElement;
+        $gameData[$sequence] = $hiddenElement;
     }
 
-    newGame($resultGame, DESCRIPTION_GAME);
+    newGame($gameData, DESCRIPTION_GAME);
 }

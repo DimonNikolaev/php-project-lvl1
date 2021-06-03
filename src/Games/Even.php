@@ -20,13 +20,13 @@ function check(int $number): string
 
 function game(): void
 {
-    $resultGame = [];
+    $gameData = [];
 
     for ($game = 0; $game < ROUNDS_COUNT; $game++) {
         $randomNumber = rand(0, 100);
 
-        $resultGame[$randomNumber] = check($randomNumber);
+        $gameData[$randomNumber] = check($randomNumber);
     }
 
-    newGame($resultGame, DESCRIPTION_GAME);
+    newGame($gameData, DESCRIPTION_GAME);
 }

@@ -13,8 +13,7 @@ function gcd(int $firstNumber, int $secondNumber): int
     while (true) {
         if ($firstNumber == $secondNumber) {
             return $secondNumber;
-        }
-        if ($firstNumber > $secondNumber) {
+        } elseif ($firstNumber > $secondNumber) {
             $firstNumber -= $secondNumber;
         } else {
             $secondNumber -= $firstNumber;
@@ -24,7 +23,7 @@ function gcd(int $firstNumber, int $secondNumber): int
 
 function game(): void
 {
-    $resultGame = [];
+    $gameData = [];
 
     for ($game = 0; $game < ROUNDS_COUNT; $game++) {
         $randomNumbers = [rand(1, 100), rand(1, 100)];
@@ -33,8 +32,8 @@ function game(): void
 
         $greatestCommonDivisor = gcd($randomNumbers[0], $randomNumbers[1]);
 
-        $resultGame[$gcd] = $greatestCommonDivisor;
+        $gameData[$gcd] = $greatestCommonDivisor;
     }
 
-    newGame($resultGame, DESCRIPTION_GAME);
+    newGame($gameData, DESCRIPTION_GAME);
 }
